@@ -10,6 +10,13 @@ Our core idea is to treat unified pretraining under multi-center style shifts as
 
 By learning identifiable and transferable content and style factors, MeDUET provides a shared foundation for both controllable generation and robust medical image analysis.
 
+## 📝 TODO
+- [x] 📄 Paper released
+- [ ] 🧠 Pretraining code
+- [ ] 📦 Pretrained model weights
+- [ ] 🔧 Downstream code
+
+
 ## 🔎 Overview
 
 In real-world medical imaging, data from different centers often share similar anatomy while exhibiting large appearance variations caused by scanners, protocols, and acquisition conditions. This makes it difficult to directly unify generative modeling and representation learning.
@@ -45,7 +52,7 @@ With disentangled content and style factors, MeDUET enables
 - stronger domain generalization
 - better label efficiency for downstream analysis
 
-## Experimental Scope
+## 📊 Experimental Scope
 
 According to the current paper, MeDUET is evaluated across **5 datasets**, **4 tasks**, and **2 modalities**. The paper studies both downstream synthesis and downstream analysis settings, including segmentation and classification benchmarks, and shows that the learned content and style factors are useful for controllable diffusion conditioning as well as style-aware transfer. 
 
@@ -65,9 +72,9 @@ Planned contents include
 
 ## 🙏 Acknowledgement
 
-Our codebase is built upon MONAI (https://github.com/Project-MONAI/MONAI), an open source framework for medical imaging AI. We sincerely thank the MONAI community for their valuable contributions.
+Our codebase is built upon [MONAI](https://github.com/Project-MONAI/MONAI), an open source framework for medical imaging AI. We sincerely thank the MONAI community for their valuable contributions.
 
-## 📝 Citation
+## ✒️ Citation
 
 If you find this project useful, please consider citing our paper.
 
