@@ -27,16 +27,34 @@ MeDUET addresses this challenge through a disentangled pretraining framework bui
 
 MeDUET is built on three main components
 
-1. **Demixing for identifiable factor supervision**  
-   Token demixing constructs controlled mixtures in latent space and provides explicit supervision for factor separation.
+<h2>💡 Key Ideas</h2>
 
-2. **MFTD**  
-   Mixed Factor Token Distillation encourages source-faithful factor assignment and reduces factor leakage in mixed regions.
+<table>
+  <thead>
+    <tr>
+      <th align="left" width="32%">Component</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🧩 <b>Demixing for Identifiable Factor Supervision</b></td>
+      <td>Token demixing constructs controlled mixtures in latent space and provides explicit supervision for factor separation.</td>
+    </tr>
+    <tr>
+      <td>🎯 <b>MFTD</b></td>
+      <td>Mixed Factor Token Distillation encourages source-faithful factor assignment and reduces factor leakage in mixed regions.</td>
+    </tr>
+    <tr>
+      <td>🔄 <b>SiQC</b></td>
+      <td>Swap-invariance Quadruplet Contrast structures the content and style spaces to improve invariance and discriminability.</td>
+    </tr>
+  </tbody>
+</table>
 
-3. **SiQC**  
-   Swap-invariance Quadruplet Contrast structures the content and style spaces to improve invariance and discriminability.
-
+<p>
 Together, these components help MeDUET learn more identifiable content and style representations that can be transferred to both synthesis and analysis tasks.
+</p>
 
 ## ✨ Features
 
@@ -50,7 +68,7 @@ MeDUET aims to bridge two lines of research that are usually developed separatel
 <table>
   <thead>
     <tr>
-      <th align="left" width="40%">Feature</th>
+      <th align="left" width="36%">Feature</th>
       <th align="left">Description</th>
     </tr>
   </thead>
