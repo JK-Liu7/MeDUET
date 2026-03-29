@@ -45,12 +45,14 @@ MeDUET aims to bridge two lines of research that are usually developed separatel
 - **medical image synthesis**
 - **medical image analysis**
 
-With disentangled content and style factors, MeDUET enables
+| Feature | Description |
+| :--- | :--- |
+| 🧬 **Unified Pretraining** | A unified framework for both **3D medical image synthesis** and **medical image analysis**. |
+| 🎛️ **Controllable Generation** | Learns disentangled **content** and **style** factors for controllable medical image synthesis. |
+| ⚡ **Faster Convergence** | Provides strong initialization for diffusion models and accelerates training convergence. |
+| 🌍 **Domain Generalization** | Improves robustness under multi-center style shifts by separating anatomy from acquisition-related appearance. |
+| 🏷️ **Label Efficiency** | Enhances downstream analysis performance, especially in limited-label settings. |
 
-- controllable medical image generation
-- faster diffusion model convergence
-- stronger domain generalization
-- better label efficiency for downstream analysis
 
 ## 📊 Experimental Scope
 
