@@ -1,4 +1,5 @@
 # MeDUET
+<a href="https://arxiv.org/abs/2602.17901"><img src='https://img.shields.io/badge/arXiv-MeDUET-red' alt='Paper PDF'></a>
 
 **MeDUET** is a unified pretraining framework for **3D medical image synthesis and analysis** in the **VAE latent space**.
 
