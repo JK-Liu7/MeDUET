@@ -109,11 +109,11 @@ We are currently cleaning and organizing the codebase for public release.
 
 Planned contents include
 
-- pretraining code for MeDUET
-- downstream synthesis code
-- downstream analysis code
-- configs and training scripts
-- data preprocessing instructions
+- 🧠 Pretraining code for MeDUET
+- 🎨 Downstream synthesis code
+- 📊 Downstream analysis code
+- ⚙️ Configs and training scripts
+- 🗂️ Data preprocessing instructions
 
 ## 🙏 Acknowledgement
 
