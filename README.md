@@ -5,8 +5,8 @@
 
 Our core idea is to treat unified pretraining under multi-center style shifts as a **factor identifiability** problem. MeDUET learns to disentangle each 3D medical volume into
 
-- **content**, which captures domain-invariant anatomy
-- **style**, which captures acquisition-related appearance
+- 🧬 **content**, which captures domain-invariant anatomy
+- 🎨 **style**, which captures acquisition-related appearance
 
 By learning identifiable and transferable content and style factors, MeDUET provides a shared foundation for both controllable generation and robust medical image analysis.
 
