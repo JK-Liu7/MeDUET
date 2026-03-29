@@ -50,7 +50,7 @@ MeDUET aims to bridge two lines of research that are usually developed separatel
 <table>
   <thead>
     <tr>
-      <th align="left">Feature</th>
+      <th align="left" width="40%">Feature</th>
       <th align="left">Description</th>
     </tr>
   </thead>
