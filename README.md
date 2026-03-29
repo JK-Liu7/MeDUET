@@ -45,13 +45,38 @@ MeDUET aims to bridge two lines of research that are usually developed separatel
 - **medical image synthesis**
 - **medical image analysis**
 
-| Feature | Description |
-| :--- | :--- |
-| 🧬 **Unified Pretraining** | A unified framework for both **3D medical image synthesis** and **medical image analysis**. |
-| 🎛️ **Controllable Generation** | Learns disentangled **content** and **style** factors for controllable medical image synthesis. |
-| ⚡ **Faster Convergence** | Provides strong initialization for diffusion models and accelerates training convergence. |
-| 🌍 **Domain Generalization** | Improves robustness under multi-center style shifts by separating anatomy from acquisition-related appearance. |
-| 🏷️ **Label Efficiency** | Enhances downstream analysis performance, especially in limited-label settings. |
+<h2>✨ Features</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Feature</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🧬 <b>Unified Synthesis and Analysis</b></td>
+      <td>Bridges <b>3D medical image synthesis</b> and <b>medical image analysis</b> within a shared pretraining framework.</td>
+    </tr>
+    <tr>
+      <td>🎛️ <b>Disentangled Factor Learning</b></td>
+      <td>Decomposes each 3D medical volume into <b>content</b> and <b>style</b> factors in the VAE latent space.</td>
+    </tr>
+    <tr>
+      <td>⚡ <b>Faster Diffusion Convergence</b></td>
+      <td>Transfers pretrained representations to diffusion transformers for faster optimization and improved synthesis quality.</td>
+    </tr>
+    <tr>
+      <td>🌍 <b>Strong Domain Generalization</b></td>
+      <td>Learns domain-invariant anatomical representations that are more robust to multi-center style shifts.</td>
+    </tr>
+    <tr>
+      <td>🏷️ <b>Better Label Efficiency</b></td>
+      <td>Improves downstream analysis in low-label regimes through transferable disentangled representations.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## 📊 Experimental Scope
