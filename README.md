@@ -27,18 +27,16 @@ MeDUET addresses this challenge through a disentangled pretraining framework bui
 
 MeDUET is built on three main components
 
-<h2>💡 Key Ideas</h2>
-
 <table>
   <thead>
     <tr>
-      <th align="left" width="32%">Component</th>
+      <th align="left" width="36%">Component</th>
       <th align="left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>🧩 <b>Demixing for Identifiable Factor Supervision</b></td>
+      <td>🧩 <b>Demixing for Factor Supervision</b></td>
       <td>Token demixing constructs controlled mixtures in latent space and provides explicit supervision for factor separation.</td>
     </tr>
     <tr>
