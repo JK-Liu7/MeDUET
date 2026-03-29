@@ -9,13 +9,13 @@ Our core idea is to treat unified pretraining under multi-center style shifts as
 
 By learning identifiable and transferable content and style factors, MeDUET provides a shared foundation for both controllable generation and robust medical image analysis.
 
-## Overview
+## 🔎 Overview
 
 In real-world medical imaging, data from different centers often share similar anatomy while exhibiting large appearance variations caused by scanners, protocols, and acquisition conditions. This makes it difficult to directly unify generative modeling and representation learning.
 
 MeDUET addresses this challenge through a disentangled pretraining framework built in the latent space of a pretrained VAE. The framework is designed to support both downstream synthesis and downstream analysis in a unified way.
 
-## Key Ideas
+## 💡 Key Ideas
 
 MeDUET is built on three main components
 
@@ -30,7 +30,7 @@ MeDUET is built on three main components
 
 Together, these components help MeDUET learn more identifiable content and style representations that can be transferred to both synthesis and analysis tasks.
 
-## Why MeDUET
+## ✨ Features
 
 MeDUET aims to bridge two lines of research that are usually developed separately
 
@@ -48,9 +48,9 @@ With disentangled content and style factors, MeDUET enables
 
 According to the current paper, MeDUET is evaluated across **5 datasets**, **4 tasks**, and **2 modalities**. The paper studies both downstream synthesis and downstream analysis settings, including segmentation and classification benchmarks, and shows that the learned content and style factors are useful for controllable diffusion conditioning as well as style-aware transfer. 
 
-## Repository Status
+## 🚀 Repository Status
 
-🚧 **Code coming soon.**
+**Code coming soon.**
 
 We are currently cleaning and organizing the codebase for public release.
 
@@ -62,12 +62,11 @@ Planned contents include
 - configs and training scripts
 - data preprocessing instructions
 
-## Paper
+## 🙏 Acknowledgement
 
-**MeDUET: Disentangled Unified Pretraining for 3D Medical Image Synthesis and Analysis**
+Our codebase is built upon MONAI (https://github.com/Project-MONAI/MONAI), an open source framework for medical imaging AI. We sincerely thank the MONAI community for their valuable contributions.
 
-
-## Citation
+## 📝 Citation
 
 If you find this project useful, please consider citing our paper.
 
