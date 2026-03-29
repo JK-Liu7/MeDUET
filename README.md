@@ -30,7 +30,7 @@ MeDUET is built on three main components
 <table>
   <thead>
     <tr>
-      <th align="left" width="36%">Component</th>
+      <th align="left" width="34%">Component</th>
       <th align="left">Description</th>
     </tr>
   </thead>
@@ -61,12 +61,10 @@ MeDUET aims to bridge two lines of research that are usually developed separatel
 - **medical image synthesis**
 - **medical image analysis**
 
-<h2>✨ Features</h2>
-
 <table>
   <thead>
     <tr>
-      <th align="left" width="36%">Feature</th>
+      <th align="left" width="34%">Feature</th>
       <th align="left">Description</th>
     </tr>
   </thead>
