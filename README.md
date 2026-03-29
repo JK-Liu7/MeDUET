@@ -78,6 +78,10 @@ MeDUET aims to bridge two lines of research that are usually developed separatel
       <td>Decomposes each 3D medical volume into <b>content</b> and <b>style</b> factors in the VAE latent space.</td>
     </tr>
     <tr>
+      <td>🎨 <b>Controllable Generation</b></td>
+      <td>Enables controllable medical image synthesis by independently conditioning generation on disentangled <b>content</b> and <b>style</b> factors.</td>
+    </tr>
+    <tr>
       <td>⚡ <b>Faster Diffusion Convergence</b></td>
       <td>Transfers pretrained representations to diffusion transformers for faster optimization and improved synthesis quality.</td>
     </tr>
