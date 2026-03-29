@@ -30,7 +30,7 @@ MeDUET is built on three main components
 <table>
   <thead>
     <tr>
-      <th align="left" width="34%">Component</th>
+      <th align="left" width="36%">Component</th>
       <th align="left">Description</th>
     </tr>
   </thead>
