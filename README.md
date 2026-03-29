@@ -72,7 +72,7 @@ Planned contents include
 
 ## 🙏 Acknowledgement
 
-Our codebase is built upon [MONAI](https://github.com/Project-MONAI/MONAI), an open source framework for medical imaging AI. We sincerely thank the MONAI community for their valuable contributions.
+Our codebase is built upon [MONAI](https://github.com/Project-MONAI/MONAI), and parts of our implementation are based on [MAE](https://github.com/facebookresearch/mae), [DiT](https://github.com/facebookresearch/DiT), and [SiT](https://github.com/willisma/SiT). We sincerely thank the authors and open-source community for their valuable contributions.
 
 ## ✒️ Citation
 
