@@ -23,6 +23,10 @@ In real-world medical imaging, data from different centers often share similar a
 
 MeDUET addresses this challenge through a disentangled pretraining framework built in the latent space of a pretrained VAE. The framework is designed to support both downstream synthesis and downstream analysis in a unified way.
 
+<p align="center">
+  <img src="assets/Framework.png" alt="Framework" width="800">
+</p>
+
 ## 💡 Key Ideas
 
 MeDUET is built on three main components
