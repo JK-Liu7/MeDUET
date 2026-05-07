@@ -10,13 +10,14 @@ Our core idea is to treat unified pretraining under multi-center style shifts as
 
 By learning identifiable and transferable content and style factors, MeDUET provides a shared foundation for both controllable generation and robust medical image analysis.
 
+---
 ## 📝 TODO
 - [x] 📄 Paper released
-- [ ] 🧠 Pretraining code
+- [x] 🧠 Pretraining code
 - [ ] 📦 Pretrained model weights
 - [ ] 🔧 Downstream code
 
-
+---
 ## 🔎 Overview
 
 In real-world medical imaging, data from different centers often share similar anatomy while exhibiting large appearance variations caused by scanners, protocols, and acquisition conditions. This makes it difficult to directly unify generative modeling and representation learning.
@@ -27,6 +28,7 @@ MeDUET addresses this challenge through a disentangled pretraining framework bui
   <img src="assets/Framework.png" alt="Framework" width="800">
 </p>
 
+---
 ## 💡 Key Ideas
 
 MeDUET is built on three main components
@@ -58,6 +60,7 @@ MeDUET is built on three main components
 Together, these components help MeDUET learn more identifiable content and style representations that can be transferred to both synthesis and analysis tasks.
 </p>
 
+---
 ## ✨ Features
 
 MeDUET aims to bridge two lines of research that are usually developed separately
@@ -100,11 +103,62 @@ MeDUET aims to bridge two lines of research that are usually developed separatel
   </tbody>
 </table>
 
-
+---
 ## 📊 Experimental Scope
 
 According to the current paper, MeDUET is evaluated across **5 datasets**, **4 tasks**, and **2 modalities**. The paper studies both downstream synthesis and downstream analysis settings, including segmentation and classification benchmarks, and shows that the learned content and style factors are useful for controllable diffusion conditioning as well as style-aware transfer. 
 
+---
+## 🛠️ **Installation**
+Clone the repository and install dependencies:
+```
+git clone https://github.com/JK-Liu7/MeDUET.git
+cd MeDUET
+pip install -r requirements.txt
+```
+---
+## 🎯 **Getting Started** 
+### Prepare Datasets
+We use VoCo-10k dataset for pre-training, which is availabel at [hugging face repo](https://huggingface.co/datasets/Luffy503/VoCo-10k/tree/main). We recommend you to convert the dataset into the nnUNet format.
+
+```
+└── MeDUET
+    ├── data
+      ├── BTCV
+      ├── MM-WHS
+      ├── Spleen
+      ├── TCIA Covid19
+      ├── Luna16
+      ├── Stoic21
+      ├── Flare23
+      ├── LiDC
+      ├── HNSCC
+      └── Totalsegmentator_dataset
+```
+
+### Prepare Tokenizer Weights
+MAISI-VAE is employed as our medical image tokenizer, whose model weights are availabel at [hugging face repo](https://huggingface.co/MONAI/maisi_ct_generative/tree/main/models).
+
+### Start Pre-training
+(1) To accerlate the pre-training, we pre-compute the volume latent representations from the frozen tokenizer, which requires extra storage. To create latent cache:
+
+```bash
+# An example of creating training latents on 4 GPUs with DDP
+cd pretrain
+bash create_latent.sh
+```
+
+(2) Run MeDUET pre-training on multi-GPU :
+
+```bash
+# An example of pre-training on 4 GPUs with DDP
+cd pretrain
+bash pretrain.sh
+```
+
+Note that we use "Persistentdataset" to pre-cache dataset for efficient training, which also requires additional storage.
+
+---
 ## 🚀 Repository Status
 
 **Code coming soon.**
@@ -118,11 +172,13 @@ Planned contents include
 - 📊 Downstream analysis code
 - ⚙️ Configs and training scripts
 - 🗂️ Data preprocessing instructions
-
+- 
+---
 ## 🙏 Acknowledgement
 
 Our codebase is built upon [MONAI](https://github.com/Project-MONAI/MONAI), and parts of our implementation are based on [MAE](https://github.com/facebookresearch/mae), [DiT](https://github.com/facebookresearch/DiT), and [SiT](https://github.com/willisma/SiT). We sincerely thank the authors and open-source community for their valuable contributions.
 
+---
 ## ✒️ Citation
 
 If you find this project useful, please consider citing our paper.
