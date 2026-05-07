@@ -115,19 +115,13 @@ git clone https://github.com/JK-Liu7/MeDUET.git
 cd MeDUET
 pip install -r requirements.txt
 ```
----
-## ⚙️ Pretraining Settings
 
-| Item | Setting |
-| --- | --- |
-| Tokenizer | MAISI-VAE |
-| Intensities | [-175, 250] |      
-| Spacing | 1.5 × 1.5 × 1.5 |
-| Input size | 96 × 96 × 96 |
-| Latent size | 4 × 24 × 24 × 24 |
-| Pretraining steps | 200k |
-| Optimizer | AdamW |
-| GPUs | 4 GPUs by default |
+---
+## ⚙️ **Pretraining Settings**
+
+| Tokenizer 🧩 | Intensities 🌡️ | Spacing 📐 | Input Size 📦 | Latent Size 🔗 | Steps 🚀 | Optimizer ⚙️ | GPUs 🖥️ |
+| ------------ | -------------- | ---------- | ------------- | -------------- | -------- | ------------ | ------- |
+| MAISI-VAE | [-175, 250] | 1.5 × 1.5 × 1.5 | 96 × 96 × 96 | 4 × 24 × 24 × 24 | 200k | AdamW | 4 GPUs by default |
 
 ---
 ## 🎯 **Getting Started** 
