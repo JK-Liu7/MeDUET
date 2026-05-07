@@ -105,8 +105,7 @@ MeDUET aims to bridge two lines of research that are usually developed separatel
 
 ---
 ## 📊 Experimental Scope
-
-According to the current paper, MeDUET is evaluated across **5 datasets**, **4 tasks**, and **2 modalities**. The paper studies both downstream synthesis and downstream analysis settings, including segmentation and classification benchmarks, and shows that the learned content and style factors are useful for controllable diffusion conditioning as well as style-aware transfer. 
+In our paper, MeDUET is evaluated across **5 datasets**, **4 tasks**, and **2 modalities**. The paper studies both downstream synthesis and downstream analysis settings, including segmentation and classification benchmarks, and shows that the learned content and style factors are useful for controllable diffusion conditioning as well as style-aware transfer. 
 
 ---
 ## 🛠️ **Installation**
@@ -117,9 +116,23 @@ cd MeDUET
 pip install -r requirements.txt
 ```
 ---
+## ⚙️ Pretraining Settings
+
+| Item | Setting |
+| --- | --- |
+| Tokenizer | MAISI-VAE |
+| Intensities | [-175, 250] |      
+| Spacing | 1.5 × 1.5 × 1.5 |
+| Input size | 96 × 96 × 96 |
+| Latent size | 4 × 24 × 24 × 24 |
+| Pretraining steps | 200k |
+| Optimizer | AdamW |
+| GPUs | 4 GPUs by default |
+
+---
 ## 🎯 **Getting Started** 
 ### Prepare Datasets
-We use VoCo-10k dataset for pre-training, which is availabel at [hugging face repo](https://huggingface.co/datasets/Luffy503/VoCo-10k/tree/main). We recommend you to convert the dataset into the nnUNet format.
+We use VoCo-10k dataset for pre-training, which is available at [Hugging Face repo](https://huggingface.co/datasets/Luffy503/VoCo-10k/tree/main). We recommend you to convert the dataset into the nnUNet format.
 
 ```
 └── MeDUET
@@ -128,19 +141,36 @@ We use VoCo-10k dataset for pre-training, which is availabel at [hugging face re
       ├── MM-WHS
       ├── Spleen
       ├── TCIA Covid19
-      ├── Luna16
-      ├── Stoic21
-      ├── Flare23
+      ├── LUNA16
+      ├── Stoic 2021
+      ├── FLARE23
       ├── LiDC
       ├── HNSCC
-      └── Totalsegmentator_dataset
+      └── TotalSegmentator
 ```
 
 ### Prepare Tokenizer Weights
-MAISI-VAE is employed as our medical image tokenizer, whose model weights are availabel at [hugging face repo](https://huggingface.co/MONAI/maisi_ct_generative/tree/main/models).
+We use MAISI-VAE as the medical image tokenizer. The pretrained tokenizer weights are available at the [Hugging Face repo](https://huggingface.co/MONAI/maisi_ct_generative/tree/main/models).
+
+Please download the MAISI-VAE checkpoint and place it under:
+
+```bash
+AutoEncoder/autoencoder.pt
+```
+
+The expected directory structure is:
+```bash
+└── MeDUET
+    ├── data
+    ├── AutoEncoder
+    │   └── autoencoder.pt
+    ├── pretrain
+    ├── downstream
+    └── ...
+```
 
 ### Start Pre-training
-(1) To accerlate the pre-training, we pre-compute the volume latent representations from the frozen tokenizer, which requires extra storage. To create latent cache:
+(1) To accelerate the pre-training, we pre-compute the volume latent representations from the frozen tokenizer, which requires extra storage. To create latent cache:
 
 ```bash
 # An example of creating training latents on 4 GPUs with DDP
@@ -148,7 +178,7 @@ cd pretrain
 bash create_latent.sh
 ```
 
-(2) Run MeDUET pre-training on multi-GPU :
+(2) Run MeDUET pre-training on multi-GPU:
 
 ```bash
 # An example of pre-training on 4 GPUs with DDP
@@ -156,23 +186,17 @@ cd pretrain
 bash pretrain.sh
 ```
 
-Note that we use "Persistentdataset" to pre-cache dataset for efficient training, which also requires additional storage.
+Note that we use "PersistentDataset" to pre-cache dataset for efficient training, which also requires additional storage.
 
 ---
 ## 🚀 Repository Status
 
-**Code coming soon.**
+The pretraining code of MeDUET has been released. We are currently preparing the pretrained weights and downstream synthesis/analysis code.
 
-We are currently cleaning and organizing the codebase for public release.
-
-Planned contents include
-
-- 🧠 Pretraining code for MeDUET
-- 🎨 Downstream synthesis code
-- 📊 Downstream analysis code
-- ⚙️ Configs and training scripts
-- 🗂️ Data preprocessing instructions
-- 
+- [x] 📄 Paper released
+- [x] 🧠 Pretraining code
+- [ ] 📦 Pretrained model weights
+- [ ] 🔧 Downstream code
 ---
 ## 🙏 Acknowledgement
 
