@@ -15,7 +15,7 @@ By learning identifiable and transferable content and style factors, MeDUET prov
 - [x] 📄 Paper released
 - [x] 🧠 Pretraining code
 - [ ] 📦 Pretrained model weights
-- [ ] 🔧 Downstream code
+- [x] 🔧 Downstream code
 
 ---
 ## 🔎 Overview
@@ -182,15 +182,56 @@ bash pretrain.sh
 
 Note that we use "PersistentDataset" to pre-cache dataset for efficient training, which also requires additional storage.
 
----
-## 🚀 Repository Status
+### Downstream Generation
+(1) Before training downstream generation models, please first pre-compute the training latents and the corresponding MeDUET content/style factors:
 
-The pretraining code of MeDUET has been released. We are currently preparing the pretrained weights and downstream synthesis/analysis code.
+```bash
+# An example of creating training latents and factors on 4 GPUs with DDP
+cd downstream/generation
+bash create_latent.sh
+bash create_factor.sh
+```
 
-- [x] 📄 Paper released
-- [x] 🧠 Pretraining code
-- [ ] 📦 Pretrained model weights
-- [ ] 🔧 Downstream code
+(2) SiT Training and Inference:
+
+#### Training
+```bash
+# An example of training SiT model on 4 GPUs with DDP
+cd downstream/generation/SiT
+bash train.sh
+```
+
+#### Inference
+```bash
+# An example of inference using SiT model on 4 GPUs with DDP
+cd downstream/generation/SiT
+bash sample.sh
+```
+
+(3) DiT Training and Inference:
+#### Training
+```bash
+# An example of training DiT model on 4 GPUs with DDP
+cd downstream/generation/DiT
+bash train.sh
+```
+
+#### Inference
+```bash
+# An example of inference using DiT model on 4 GPUs with DDP
+cd downstream/generation/DiT
+bash sample.sh
+```
+
+### Downstream Analysis
+For downstream analysis, we provide an example on BTCV to demonstrate how to fine-tune and evaluate MeDUET for 3D medical image segmentation:
+
+```bash
+# An example of fine-tuning on BTCV on 4 GPUs with DDP
+cd downstream/analysis/BTCV
+bash train.sh
+```
+
 ---
 ## 🙏 Acknowledgement
 
