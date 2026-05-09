@@ -15,7 +15,8 @@ By learning identifiable and transferable content and style factors, MeDUET prov
 - [x] 📄 Paper released
 - [x] 🧠 Pretraining code
 - [ ] 📦 Pretrained model weights
-- [x] 🔧 Downstream code
+- [x] 🎨 Downstream generation code
+- [x] 📊 Downstream analysis code
 
 ---
 ## 🔎 Overview
@@ -126,7 +127,7 @@ pip install -r requirements.txt
 ---
 ## 🎯 **Getting Started** 
 ### Prepare Datasets
-We use VoCo-10k dataset for pre-training, which is available at [Hugging Face repo](https://huggingface.co/datasets/Luffy503/VoCo-10k/tree/main). We recommend you to convert the dataset into the nnUNet format.
+We use VoCo-10k dataset for pretraining, which is available at [Hugging Face repo](https://huggingface.co/datasets/Luffy503/VoCo-10k/tree/main). We recommend converting the dataset into the nnUNet format.
 
 ```
 └── MeDUET
@@ -136,7 +137,7 @@ We use VoCo-10k dataset for pre-training, which is available at [Hugging Face re
       ├── Spleen
       ├── TCIA Covid19
       ├── LUNA16
-      ├── Stoic 2021
+      ├── STOIC2021
       ├── FLARE23
       ├── LiDC
       ├── HNSCC
@@ -163,8 +164,8 @@ The expected directory structure is:
     └── ...
 ```
 
-### Start Pre-training
-(1) To accelerate the pre-training, we pre-compute the volume latent representations from the frozen tokenizer, which requires extra storage. To create latent cache:
+### Start pretraining
+(1) To accelerate the pretraining, we pre-compute the volume latent representations from the frozen tokenizer, which requires extra storage. To create latent cache:
 
 ```bash
 # An example of creating training latents on 4 GPUs with DDP
@@ -172,10 +173,10 @@ cd pretrain
 bash create_latent.sh
 ```
 
-(2) Run MeDUET pre-training on multi-GPU:
+(2) Run MeDUET pretraining on multi-GPU:
 
 ```bash
-# An example of pre-training on 4 GPUs with DDP
+# An example of pretraining on 4 GPUs with DDP
 cd pretrain
 bash pretrain.sh
 ```
@@ -183,6 +184,9 @@ bash pretrain.sh
 Note that we use "PersistentDataset" to pre-cache dataset for efficient training, which also requires additional storage.
 
 ### Downstream Generation
+
+We provide downstream generation examples based on SiT and DiT.
+
 (1) Before training downstream generation models, please first pre-compute the training latents and the corresponding MeDUET content/style factors:
 
 ```bash
